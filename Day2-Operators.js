@@ -28,7 +28,7 @@ multiplyNumbers(2, 2);
 // Task 4 : Write a program to divide two numbers and log the result to the console.
 
 const divideNumbers = (x, y) => {
-  console.log(x * y);
+  console.log(x / y);
 };
 divideNumbers(5, 2);
 
