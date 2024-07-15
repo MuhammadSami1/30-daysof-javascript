@@ -137,3 +137,10 @@ checkNumber5(3);
 /*Activity 5: Combining Conditions
 
 Task 7: Write a program to check if a year is a leap year using multiple conditions (divisible by 4 , but not 100 unless also divide by 400) and log the result to the console.*/
+
+function leapyear(year) {
+  const result1 = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+  console.log(result1);
+}
+
+leapyear(2024);
