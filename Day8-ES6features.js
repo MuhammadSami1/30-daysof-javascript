@@ -58,6 +58,26 @@ console.log(defaultParameters(2, 2));
 console.log(defaultParameters(5));
 
 // Activity 5: Enhanced object literals
-// Task 8:
+// Task 8: Use Enhaced object literals to create an object with methods and properties, and log the result to the console.
 
-// Task 9:
+const id = 1;
+const call = "Ali";
+const object = {
+  id,
+  call,
+  method1: function () {
+    console.log(this.id, this.call);
+  },
+};
+object.method1();
+
+// Task 9: Create an object with computed property names based on varibles and log the object to the console.
+const propName1 = "firstName";
+const propName2 = "lastName";
+
+const object1 = {
+  [propName1]: "John",
+  [propName2]: "Doe",
+};
+
+console.log(object1);
