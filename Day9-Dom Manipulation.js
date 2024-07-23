@@ -46,10 +46,28 @@ image.setAttribute("src", "https://www.w3schools.com/w3images/lights.jpg");
 
 // Task 8: Add and remove css class to/from an HTML element.
 
+const removeCss = document.getElementById("removeCss");
+removeCss.classList.remove("css");
 
+const addCss = document.getElementById("addCss");
+addCss.classList.add("css");
 
 // Activity 5: Event Handling
 
-// Task 9 : Add a clcik listener to a button that changes the text content of a paragraph.
+// Task 9 : Add a click listener to a button that changes the text content of a paragraph.
+const clickListener = document.getElementById("clickListener");
+const changeTextButton = document.getElementById("changeTextButton");
+
+changeTextButton.addEventListener('click', function () {
+    clickListener.textContent = "text Content of paragraph changed"
+})
+
 
 // Task 10: Add a mouseover event listener to an element that changes its border color.
+
+const mouseOver = document.getElementById("mouseOver");
+
+
+mouseOver.addEventListener("mouseover", function () {
+    mouseOver.style.borderColor = "black";
+})
