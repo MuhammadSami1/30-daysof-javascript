@@ -25,6 +25,43 @@ myPromise1.catch((error) => {
 
 // Activity 2: Chainnig Promises
 // Task 3: Create a sequence of Promise that simulate fetching data from server. Chain the Promise to log messages in a specific order.
+const fetchData1 = new Promise((resolve) => {
+    setTimeout(() => {
+        console.log("Fetched data from server 1");
+        resolve("Data 1");
+    }, 3000);
+});
+
+const fetchData2 = new Promise((resolve) => {
+    setTimeout(() => {
+        console.log("Fetched data from server 2");
+        resolve("Data 2");
+    }, 2000);
+});
+
+const fetchData3 = new Promise((resolve) => {
+    setTimeout(() => {
+        console.log("Fetched data from server 3");
+        resolve("Data 3");
+    }, 1000);
+});
+
+fetchData1
+    .then((data1) => {
+        console.log(data1);
+        return fetchData2;
+    })
+    .then((data2) => {
+        console.log(data2);
+        return fetchData3;
+    })
+    .then((data3) => {
+        console.log(data3);
+        console.log("All data fetched in sequence");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 
 
@@ -107,7 +144,50 @@ api();
 
 // Activity 5: Concurrent Promises
 // Task 8: Use promise.all to wait for multiple promises to resolve and then log all their values.
+const promise1 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Promise 1 resolve");
 
+    }, 8000)
+});
+const promise2 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Promise 2 resolve");
+
+    }, 10000)
+});
+const promise3 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Promise 3 resolve");
+
+    }, 11000)
+});
+
+Promise.all([promise1, promise2, promise3])
+    .then((values) => {
+        console.log(values);
+    }).catch((err) => {
+        console.log(err);
+    });
 
 
 // Task 9: Use Promise.race to log the  value of the first promise that resolves among multiple promises.
+const pro1 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Value one");
+    }, 12000);
+});
+
+const pro2 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("Value two");
+    }, 11000);
+});
+
+Promise.race([pro1, pro2])
+    .then((value) => {
+        console.log(value);
+        console.log("promise race");
+    }).catch((err) => {
+        console.log(err);
+    });
