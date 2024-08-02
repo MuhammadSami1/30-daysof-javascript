@@ -34,12 +34,37 @@ export function maxNumber(...values) {
 
 // Task 4: Create a module that exports a single function using default export. Import and use this function in another script.
 
-
-
+const sortArray = () => {
+    const arr = [6, 5, 4, 3, 2, 1];
+    const sort = arr.sort();
+    return sort;
+}
+export default sortArray;
 
 // Activity 3: Importing Entire Modules
 
 // Task 5: Create a module that exports multiple constants and functions. Import the entire module as an object in another script and use its properties.
+
+export const multiFunctions = () => {
+    const multiple = (value1, value2) => {
+        return value1 * value2;
+    }
+
+    function tree() {
+        for (let i = 1; i <= 5; i++) {
+            let line = "";
+            for (let j = 1; j <= i; j++) {
+                line += "*"
+            }
+            console.log(line);
+        }
+    }
+
+    return {
+        multiple,
+        tree
+    }
+}
 
 // Activity 4: Using Third-Party Modules
 // Task 6: Install a third-party module(lodash) using npm. Import and use a function from this module in a script.
@@ -50,10 +75,19 @@ var array = [1, 2, 3];
 console.log(_.reverse(array));
 
 
-
-
 // Task 7: Install a third-party module(axios) using npm. Import and use this module to make a network request in a script.
+import axios from 'axios';
 
+const fetchData = async () => {
+    try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        console.log(response.data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+
+fetchData();
 
 
 // Activity 5: Module Bundling
