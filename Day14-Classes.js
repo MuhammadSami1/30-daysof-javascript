@@ -26,16 +26,64 @@ console.log(person1.updataMethod());
 // Activity 2: Class Inheritance
 // Task 3 : Define a class student that extends the person class. Add a property studentId and a method to return the student ID. Create an instance of the Student class and log the student ID.
 
+class person {
+    students = 25;
 
+}
+class Student extends person {
 
+    constructor(studentId) {
+        super();
+        this.studentId = studentId;
+    }
+    getStudentId() {
+        return this.studentId;
+
+    }
+}
+
+const student1 = new Student('bc230210214');
+console.log(student1.getStudentId());
 
 // Task 4 : Override the greeting method in the student class to include the student ID in the message. Log the overridden greeting message.
 
+class Parent {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    static species = 'Homo sapiens';
+
+    static describeSpecies() {
+        return `Species: ${this.species}`;
+    }
+    greeting() {
+        return `Your Name is ${name} and your age is ${age}`
+    }
+}
+
+class Child extends Parent {
+    constructor(name, age, id) {
+        super(name, age)
+        this.id = id
+    }
+    // override greeting method 
+    greeting() {
+        return `Your Name is ${name} and your age is ${age} and your id is ${id}`
+    }
+}
+
+const child1 = new Child('Sami', 23, 'bc230202190');
+console.log(child1);
+
+
 // Activity 3: Static Methods and Properties
 // Task 5: Add a static method to the person class that returns a generic greeting message. Call this static method without creating an instance of the class and log the message.
-
-
 // Task 6: Add a static method to the person class that returns a generic greeting message. Call this static method without creating an instance of the class and log the message.
+
+console.log(Parent.describeSpecies());
+
 
 // Activity 4: Getters and setters
 // Task 7: Add a getter method to the person class to return the full name (assume a firstName and lastName property). Create an instance and log the full name using the getter.
