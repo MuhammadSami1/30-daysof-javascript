@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: darkgray;
+}
+#firstdiv {
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  height: 100vh;
+}
+#chatapp,
+#chatapp1 {
+  background-color: lightseagreen;
+  min-width: 350px;
+  text-align: center;
+  border-radius: 0.6rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#h1 {
+  color: lightgrey;
+}
+#ptag {
+  padding-bottom: 40px;
+}
+#text,
+#text1 {
+  min-width: 250px;
+  border-radius: 0.9rem;
+  padding: 10px 10px 10px 10px;
+}
+#btn1,
+#btn2 {
+  padding: 8px 8px 8px 8px;
+  border-radius: 0.6rem;
+}
+#ul {
+  padding-top: 20px;
+}
+#admin {
+  padding-top: 60px;
+}
+#admin1 {
+  padding-top: 100px;
+}
